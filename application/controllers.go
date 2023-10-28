@@ -1,5 +1,3 @@
-// application/controllers.go
-
 package application
 
 import (
@@ -8,7 +6,7 @@ import (
 )
 
 func homeHandler(w http.ResponseWriter, r *http.Request) {
-	response := map[string]string{"Message": "This is the home page!"}
+	response := map[string]string{"Message": "This is a cat!"}
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(response)
 }

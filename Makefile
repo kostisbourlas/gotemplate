@@ -21,3 +21,11 @@ web:
 
 lg:
 	docker compose logs -f
+
+test:
+	go test -v -cover ./...
+
+clean: down
+	rm -f gotemplate
+	docker system prune -f
+	docker volume prune -f

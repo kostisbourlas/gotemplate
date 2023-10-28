@@ -1,5 +1,3 @@
-// application/routers.go
-
 package application
 
 import (
