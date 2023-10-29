@@ -11,7 +11,7 @@ import (
 
 const SERVER_PORT = ":8080"
 
-func runServer() {
+func initializeServer() {
 	router := mux.NewRouter()
 	application.RegisterApiRouters(router)
 

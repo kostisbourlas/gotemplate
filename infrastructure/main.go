@@ -1,5 +1,5 @@
 package infrastructure
 
 func Run() {
-	runServer()
+	initializeServer()
 }
