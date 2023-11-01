@@ -19,7 +19,7 @@ db:
 web:
 	docker compose exec server bash
 
-lg:
+logs:
 	docker compose logs -f
 
 test:
