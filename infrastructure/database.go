@@ -9,7 +9,7 @@ import (
 )
 
 var (
-	Client     *sql.DB
+	PgDB       *sql.DB
 	DBHost     = "database"
 	DBPort     = "5432"
 	DBUser     = os.Getenv("POSTGRES_USER")
@@ -22,11 +22,15 @@ func initializeDatabase() {
 		"host=%s user=%s password=%s dbname=%s sslmode=disable", DBHost, DBUser, DBPassword, DBName,
 	)
 	var err error
-	Client, err = sql.Open("pgx", connInfo)
+	PgDB, err = sql.Open("pgx", connInfo)
+
 	if err != nil {
 		panic(err)
 	}
-	if err = Client.Ping(); err != nil {
+
+	defer PgDB.Close()
+
+	if err = PgDB.Ping(); err != nil {
 		panic(err)
 	}
 
