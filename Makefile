@@ -16,8 +16,8 @@ down:
 db:
 	docker compose exec database psql -h localhost -U postgres postgres
 
-web:
-	docker compose exec server bash
+sh:
+	docker compose exec server sh
 
 logs:
 	docker compose logs -f
